@@ -1,0 +1,77 @@
+/* Ensure the entire app takes full viewport height */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Full viewport height */
+  box-sizing: border-box; /* Ensure padding/border doesn't affect size */
+}
+
+/* Main content grows to push the footer down */
+.content {
+  flex: 1; /* Allows dynamic content expansion */
+  padding: 1rem; /* Consistent padding for responsiveness */
+}
+
+/* Navbar styling for responsiveness */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  box-sizing: border-box;
+}
+
+/* Footer stays at the bottom and is responsive */
+.footer {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  padding: 1.5rem;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Make navbar and footer adapt to small screens */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .footer {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Ensure form responsiveness */
+form {
+  max-width: 600px;
+  margin: 0 auto; /* Center the form */
+  width: 100%; /* Ensure responsiveness */
+}
+
+/* Button responsiveness */
+button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+/* Ensure modal responsiveness */
+.modal-content {
+  max-width: 500px;
+  width: 90%; /* Adapt modal width */
+  padding: 2rem;
+}
+
+/* Ensure images are responsive if any */
+img {
+  max-width: 100%;
+  height: auto;
+}

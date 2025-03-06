@@ -1,0 +1,127 @@
+/* Navbar Layout */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--primary-color); /* White */
+  color: var(--secondary-color); /* Green */
+  border-bottom: 2px solid var(--secondary-color);
+  height: 80px;
+  box-sizing: border-box;
+}
+
+/* Brand Style */
+.navbar-brand h2 {
+  margin: 0;
+  font-size: 30px;
+}
+
+/* Navbar Links (Desktop View) */
+.navbar-links {
+  display: flex;
+  list-style: none;
+}
+
+.navbar-links li {
+  margin: 0 1rem;
+  font-size: 20px;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: #000000;
+  padding: 1rem;
+  transition: border-bottom 0.3s ease;
+}
+
+.navbar-links a:hover {
+  border-bottom: 2px solid var(--secondary-color);
+}
+
+/* Book Appointment Button */
+.book-btn {
+  text-decoration: none;
+  color: var(--secondary-color);
+  padding: 1rem 1.5rem;
+  border: 2px solid var(--secondary-color);
+  background-color: var(--primary-color);
+  border-radius: 40px;
+  cursor: pointer;
+  font-size: 21px;
+}
+
+.book-btn:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+/* Hamburger Icon (Visible only on Mobile) */
+.hamburger {
+  display: none; /* Hidden by default */
+  font-size: 35px;
+  cursor: pointer;
+}
+/* hide Book Button in horizontal bar */
+.sidebar-book-btn {
+  display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  /* Show hamburger in mobile view */
+  .hamburger {
+    display: block;
+    position: absolute;
+    top: 10px;
+    align-self: flex-start;
+  }
+
+  /* Hide links initially on mobile */
+  .navbar-links {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: -100%; /* Hidden initially */
+    width: 50%;
+    height: 100vh;
+    background-color: var(--primary-color);
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.3);
+    padding-top: 2rem;
+    transition: right 0.3s ease; /* Smooth slide */
+    z-index: 1000; /* Ensure above other content */
+    border-left: 5px solid var(--secondary-color);
+  }
+
+  /* Open Sidebar */
+  .navbar-links.open {
+    right: 0; /* Slide-in effect */
+  }
+
+  /* Center sidebar links */
+  .navbar-links li {
+    margin: 1.5rem 0;
+    text-align: center;
+  }
+
+  /* Ensure button fits in sidebar */
+  .sidebar-book-btn {
+    display: block;
+    width: 100%;
+    margin-top: auto;
+    text-align: center;
+    padding: 1rem 0;
+  }
+
+  /* Hide book button from navbar in mobile view */
+  .navbar > .book-btn {
+    display: none;
+  }
+
+  .book-btn {
+    width: 80%;
+    margin: 2rem auto;
+    text-align: center;
+  }
+}
