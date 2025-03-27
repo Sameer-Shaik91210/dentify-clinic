@@ -1,10 +1,54 @@
 /* Home.css */
 
+/* Global reset  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.home {
+  width: 100%;
+}
+
 /* General page styling */
 body {
   font-family: Arial, sans-serif;
 }
 
+/* hero section */
+.hero {
+  position: relative;
+  width: 100vw; /* Full width of the viewport */
+  height: 100vh; /* Full height of the viewport */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Ensures the image doesn't cause scroll issues */
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures it covers the whole section */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1; /* Moves the image behind text */
+}
+.hero-content {
+  text-align: center;
+  color: black;
+  z-index: 1; /* Places the text above the image */
+  max-width: 80%;
+}
+
+.hero h1 {
+  font-size: 24px;
+}
+.hero p {
+  font-size: 16px;
+}
 h1 {
   text-align: center;
 }
@@ -62,4 +106,95 @@ button:hover {
 
 .close-button:hover {
   color: red;
+}
+
+/* About Section */
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+}
+
+.about-text {
+  margin-top: 15px;
+  width: 90%;
+}
+
+.about-text h2 {
+  font-size: 22px;
+}
+
+.about-text p {
+  font-size: 16px;
+}
+
+/* Service Section */
+.services {
+  text-align: center;
+  padding: 20px;
+}
+
+.service-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  padding: 10px;
+}
+
+.card {
+  background: var(--accent-color);
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* Responsive Design for Tablets and Desktops */
+@media (min-width: 768px) {
+  .hero {
+    height: 80vh;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .hero p {
+    font-size: 18px;
+  }
+
+  .about {
+    flex-direction: row;
+    text-align: left;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  .about-image {
+    flex: 1;
+    text-align: center;
+  }
+  .about-image img {
+    max-width: 400px;
+  }
+
+  .about-text {
+    flex: 1;
+  }
+
+  .service-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .service-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
